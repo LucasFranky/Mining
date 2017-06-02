@@ -1,23 +1,23 @@
 local Back = 1
---[This is the function used throughout
+--[[This is the function used throughout
 the code to make the turtle go back the
 same amount of blocks it went forward.
---]
+--]]
 local success, down = turtle.inspectDown()
   local depth = 0
---[This function is basically the same
+--[[This function is basically the same
 thing as the firs one but makes the turtle
 go back to the top of the mine.
---]
+--]]
   for x = 1,1 do
   turtle.dig()
   turtle.forward()
   Back = Back + 1
   end
---[This for statement makes the turtle
+--[[This for statement makes the turtle
 go forward to where it will start its
 loop of digging down then coming up
---]  
+--]]
 for x = 1,5 do
   while down.name ~= "minecraft:bedrock" do
     turtle.digDown()
@@ -34,17 +34,17 @@ for x = 1,5 do
   turtle.forward()
   success,down = turtle.inspectDown()
 end
---[The code between the last comment and
+--[[The code between the last comment and
 this one is meant to make the turtle dig
 down then come up and move forward once.
 Then it repeats this step 5 times.
---]
+--]]
 for x = 1, Back do
   turtle.back()
 end
---[This code makes the turtle return
+--[[This code makes the turtle return
 to its initial spot.
---]
+--]]
 local function PutAway()
   for inventory = 1,16 do
     turtle.select(inventory)
@@ -52,8 +52,8 @@ local function PutAway()
   end
 end
 PutAway()
---[Finally this code puts all the materials
+--[[Finally this code puts all the materials
 that were gathered throughout its
 journey into hoppers which send it into
 chests.
---]
+--]]
